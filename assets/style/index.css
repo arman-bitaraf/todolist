@@ -68,7 +68,6 @@ body{
 }
 .container .tasklist li:hover .closebtn{
     display: inline-block;
-   
 }
 .container .tasklist li:hover .closebtn i:hover{
     color: red;
@@ -78,7 +77,6 @@ body{
     text-decoration: line-through;
 }
 .container .tasklist li.done::before{
-    
     content: '';
     width: 0.5rem;
     height: 1.2rem;
