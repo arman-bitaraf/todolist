@@ -10,6 +10,7 @@ function createTask(text){
 addBtn.addEventListener('click', ()=>{
     let text = input.value;
     let task = createTask(text);
+    task.innerHTML += '<span class="closebtn"><i class="fa-solid fa-trash-can"></i></span>';
     taskList.appendChild(task);
     input.value='';
 })

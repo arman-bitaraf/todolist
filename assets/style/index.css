@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 50%;
+}
+.container .header{
+    background-color: #f69517;
+    padding: 1rem 3.5rem 2rem;
+    color: #fff;
+    text-align: center;
+    display: flow-root;
+}
+.container .header h2{
+    margin: .8rem;
+    font-size: 2em;
+}
+.container .header input{
+    width: 75%;
+    float: left;
+    border: none;
+    outline: none;
+    padding: .8rem;
+    font-size: 1rem;
+}
+.container .header .addbtn{
+    width: 25%;
+    float: right;
+    border: none;
+    padding: .8rem;
+    background-color: #d9d9d9;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.container .header .addbtn:hover{
+    background-color: #bbb;
+}
+.container .tasklist{
+    max-height: 30%;
+    overflow-y: auto;
+    list-style-type: none;
+}
+.container .tasklist li{
+    cursor: pointer;
+    position: relative;
+    padding: .8rem .5rem .8rem 3rem;
+    background-color: #eee;
+    font-size: 1.1em;
+    transition: .3s;
+    user-select: none;
+}
+.container .tasklist li:hover{
+    background-color: rgb(205,204,204);
+}
+.container .tasklist li .closebtn{
+    position: absolute;
+    right: 1rem;
+    display: none;
+}
+.container .tasklist li:hover .closebtn{
+    display: inline-block;
+   
+}
+.container .tasklist li:hover .closebtn i:hover{
+    color: red;
+}
