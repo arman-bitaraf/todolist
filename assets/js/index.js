@@ -1,6 +1,7 @@
 let addBtn = document.querySelector('button');
 let taskList =document.querySelector('ul');
 let input = document.querySelector('input');
+let task =[];
 
 function createTask(text){
     let li = document.createElement('li');
@@ -14,6 +15,7 @@ addBtn.addEventListener('click', ()=>{
     task.innerHTML += '<span class="closebtn"><i class="fa-solid fa-trash-can"></i></span>';
     taskList.appendChild(task);
     input.value='';
+    saveTasks(text);
 })
 
 taskList.addEventListener('click', (e)=>{
@@ -25,3 +27,7 @@ taskList.addEventListener('click', (e)=>{
     }
 })
 
+function saveTasks(text){
+    task.push(text)
+    localStorage.setItem('todo', task);
+}
