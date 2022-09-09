@@ -1,7 +1,13 @@
 let addBtn = document.querySelector('button');
 let taskList =document.querySelector('ul');
 let input = document.querySelector('input');
-let task =[];
+let tasks;
+
+if(!localStorage.getItem('todo')){
+    tasks =[];
+}else{
+    tasks = getTasks();
+}
 
 function createTask(text){
     let li = document.createElement('li');
@@ -28,6 +34,11 @@ taskList.addEventListener('click', (e)=>{
 })
 
 function saveTasks(text){
-    task.push(text)
-    localStorage.setItem('todo', task);
+    tasks.push(text)
+    localStorage.setItem('todo', tasks);
 }
+
+function getTasks(){
+    return localStorage.getItem('todo').split(',');
+}
+
