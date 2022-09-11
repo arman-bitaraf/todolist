@@ -1,3 +1,4 @@
+window.addEventListener('load',showTasks);
 let addBtn = document.querySelector('button');
 let taskList =document.querySelector('ul');
 let input = document.querySelector('input');
@@ -41,4 +42,12 @@ function saveTasks(text){
 function getTasks(){
     return localStorage.getItem('todo').split(',');
 }
+console.log(getTasks())
 
+function showTasks(){
+    for (let text of getTasks()) {
+        let task = createTask(text);
+        task.innerHTML += '<span class="closebtn"><i class="fa-solid fa-trash-can"></i></span>';
+        taskList.appendChild(task);
+    }
+}
