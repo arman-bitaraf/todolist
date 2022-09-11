@@ -27,7 +27,10 @@ addBtn.addEventListener('click', ()=>{
 
 taskList.addEventListener('click', (e)=>{
     if(e.target.nodeName === 'I'){
-        e.target.parentElement.parentElement.style = 'display : none'
+       let target = e.target.parentElement.parentElement;
+       target.style = 'display : none';
+        tasks.splice(tasks.indexOf(target.textContent),1);
+        localStorage.setItem('todo', tasks);
     }
     if(e.target.nodeName === 'LI'){
         e.target.classList.toggle('done');
@@ -42,11 +45,10 @@ function saveTasks(text){
 function getTasks(){
     return localStorage.getItem('todo').split(',');
 }
-console.log(getTasks())
 
 function showTasks(){
-    for (let text of getTasks()) {
-        let task = createTask(text);
+    for (let taskText of getTasks()) {
+        let task = createTask(taskText);
         task.innerHTML += '<span class="closebtn"><i class="fa-solid fa-trash-can"></i></span>';
         taskList.appendChild(task);
     }
